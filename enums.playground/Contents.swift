@@ -1,22 +1,22 @@
 import UIKit
 
-enum StatusCode {
-    case success
-    case unauthorized
-    case forbidden
-    case notFound
+enum StatusCode: Int {
+    case success = 200
+    case unauthorized = 401
+    case forbidden = 403
+    case notFound = 404
 }
 
 
 func prettyPrint(_ code: StatusCode) -> String {
     switch code {
     case .success:
-        return "200: Success"
+        return "\(code.rawValue): Success"
     case .unauthorized:
-        return "401: Unauthorized"
+        return "\(code.rawValue): Unauthorized"
     case .forbidden:
-        return "403: Forbidden"
+        return "\(code.rawValue): Forbidden"
     case .notFound:
-        return "404: Not Found"
+        return "\(code.rawValue): Not Found"
     }
 }
